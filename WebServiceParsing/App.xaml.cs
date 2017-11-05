@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Common.WebServices;
+using Xamarin.Forms;
 
 namespace WebServiceParsing
 {
@@ -7,7 +8,12 @@ namespace WebServiceParsing
         public App()
         {
             InitializeComponent();
-            Common.WebServices.UserLoginService obj = new Common.WebServices.UserLoginService();
+			var data = "Cryptographic example";
+			var pass = "MySecretKey";
+			var salt = Crypto.CreateSalt(16);
+            var bytes = Crypto.EncryptAes(data, pass, salt);
+			var str = Crypto.DecryptAes(bytes, pass, salt);
+			Common.WebServices.UserLoginService obj = new Common.WebServices.UserLoginService();
             var result = obj.PostResponseFromHttpRequest("test", "testPassword");
             MainPage = new WebServiceParsingPage();
         }
