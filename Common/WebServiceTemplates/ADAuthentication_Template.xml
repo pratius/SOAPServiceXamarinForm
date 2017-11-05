@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body xmlns:ns1="http://xmlns.oracle.com/iPhone/IPhoneAuthenticateUserProject/AuthenticateUserBPELProcess">
+        <ns1:AuthenticateUserRequest>
+            <ns1:userName>{0}</ns1:userName>
+            <ns1:passWord>{1}</ns1:passWord>
+        </ns1:AuthenticateUserRequest>
+    </soap:Body>
+</soap:Envelope>
