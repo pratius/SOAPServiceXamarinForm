@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 using PCLCrypto;
 namespace Common.WebServices
 {
@@ -64,6 +66,24 @@ namespace Common.WebServices
 			ICryptographicKey symetricKey = aes.CreateSymmetricKey(key);
 			var bytes = WinRTCrypto.CryptographicEngine.Decrypt(symetricKey, data);
 			return Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+		}
+
+		public static T DeserializeXMLFileToObject<T>(string XmlFilename)
+		{
+			T returnObject = default(T);
+			if (string.IsNullOrEmpty(XmlFilename)) return default(T);
+
+			try
+			{
+				StringReader xmlStream = new StringReader(XmlFilename);
+				XmlSerializer serializer = new XmlSerializer(typeof(T));
+				returnObject = (T)serializer.Deserialize(xmlStream);
+			}
+			catch (Exception ex)
+			{
+				//ExceptionLogger.WriteExceptionToConsole(ex, DateTime.Now);
+			}
+			return returnObject;
 		}
 
 	}

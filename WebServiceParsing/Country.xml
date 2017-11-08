@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configurations>
+    <Connfiguration id="Production">
+        <ValidateLogin validateLogin="validateLoginUrl">Tove</ValidateLogin>
+        <CreateAccount createAccount="createAccountUrl">Jani</CreateAccount>
+        <UserPassword password="password">test</UserPassword>
+        <UserName userName="userName">test</UserName>
+    </Connfiguration>
+    <Connfiguration id="Sttaging">
+        <ValidateLogin validateLogin="validateLoginUrl">Tove</ValidateLogin>
+        <CreateAccount createAccount="createAccountUrl">Jani</CreateAccount>
+        <UserPassword password="password">"test"</UserPassword>
+        <UserName userName="userName">"test"</UserName>
+    </Connfiguration>
+</Configurations>
