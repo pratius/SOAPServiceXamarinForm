@@ -31,6 +31,14 @@
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="WebServiceParsingPage.xaml" />
     <EmbeddedResource Include="Country.xml" />
+    <EmbeddedResource Include="HeaderControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -41,6 +49,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="HeaderControls.xaml.cs">
+      <DependentUpon>HeaderControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.xaml.cs">
+      <DependentUpon>Popup.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
